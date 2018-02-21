@@ -1588,7 +1588,7 @@
 			border-bottom-color: transparent;
 		}
 		#hov_img:hover{
-			opacity: 0.25;
+			opacity: 0.3;
     filter: alpha(opacity=30);
 	}
 
