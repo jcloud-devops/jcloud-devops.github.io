@@ -1581,12 +1581,16 @@
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		color: #3fb1a3;
 		text-decoration: none;
-		border-bottom: dotted 1px;
+		/* border-bottom: dotted 1px; */
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
 		}
+		#hov_img:hover{
+			opacity: 0.3;
+    filter: alpha(opacity=30);
+	}
 
 	strong, b {
 		font-weight: 400;

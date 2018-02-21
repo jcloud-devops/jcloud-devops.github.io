@@ -13,18 +13,29 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script>       //show함수는 보여주게 하고 hide함수는 숨겨준다.
+ var show = function(path) {
+		 var tool = document.getElementById(path);
+		 tool.style.visibility = '';
+ }
+ var hide = function(path) {
+		 var tool  = document.getElementById(path);
+		 tool.style.visibility = 'hidden';
+ }
+</script>
+
 	</head>
 	<body class="no-sidebar">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header">
-					<h1 id="logo"><a href="index.html">JCloud <span>by JDevOps</span></a></h1>
+					<h1 id="logo"><a href="main.html"><img src="images/logo_jbnu.png" width="15" height="15" alt="" />&nbsp;JCloud <span>by JDevOps</span></a></h1>
 					<nav id="nav">
 						<ul>
-							<li class="current"><a href="index.html">Welcome</a></li>
-							<li class="current"><a href="right-sidebar.html">Feature</a></li>
-							<li class="current"><a href="no-sidebar.html">User guide</a></li>
+							<li class="current"><a href="main.html">Welcome</a></li>
+							<li class="current"><a href="feature.html">Feature</a></li>
+							<li class="current"><a href="user-guide.html">User guide</a></li>
 
 							<!-- <li class="submenu">
 								<a href="#">Layouts</a>
@@ -66,12 +77,23 @@
 								<div class="content">
 									<section>
 										<ul class="buttons vertical" style="text-align:center;">
-											<li style="display:inline;"><a style="text-transform:none;" href="#" class="button">JCloud</a></li> &emsp;
-											<li style="display:inline;"><a style="text-transform:none;" href="#" class="button">WebIDE</a></li>
+											<li style="display:inline;"><a style="text-transform:none;" onclick="show('jcloud'); hide('webide')" class="button">JCloud</a></li> &emsp;
+											<li style="display:inline;"><a style="text-transform:none;" onclick="show('webide'); hide('jcloud')" class="button">WebIDE</a></li>
 										</ul>
-										<br>
+										<center>
+											<div class="js">
+												<div id="jcloud" style="visibility:hidden; position:absolute;">
+													jcloud
+												</div>
+												<div id="webide" style="visibility:hidden; position:static;">
+													webide
+												</div>
+										</div>
 										<!--<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>-->
-										<iframe src='https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21108&authkey=AGd9e5Asc2_Gjho&em=2&wdAr=1.7777777777777777' width='1050px' height='691px' frameborder='0'>포함된 <a target='_blank' href='https://office.com'>Microsoft Office</a> 프레젠테이션, 제공: <a target='_blank' href='https://office.com/webapps'>Office Online</a></iframe>
+
+
+										<br><iframe src='https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21108&authkey=AGd9e5Asc2_Gjho&em=2&wdAr=1.7777777777777777' width='1050px' height='691px' frameborder='0'>포함된 <a target='_blank' href='https://office.com'>Microsoft Office</a> 프레젠테이션, 제공: <a target='_blank' href='https://office.com/webapps'>Office Online</a></iframe>
+									</center>
 										<header>
 											<h3>Dolore Amet Consequat</h3>
 										</header>
