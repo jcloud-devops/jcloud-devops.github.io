@@ -82,21 +82,32 @@
 											<li style="display:inline;"><a style="text-transform:none;" onclick="show('webide'); hide('jcloud')" class="button">WebIDE</a></li>
 										</ul>
 										<center>
-											<div class="js">
-												<div id="jcloud" style="visibility:hidden; position:absolute;">
-													jcloud
+											<div class="button-js">
+												<div id="jcloud" style="visibility:hidden;">
+
+													 <li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1'); hide('ppt2'); hide('ppt3')">PPT1</a></li>
+													 <li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt2'); hide('ppt1'); hide('ppt3')">PPT2</a></li>
+													 <li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt3'); hide('ppt1'); hide('ppt2')">PPT3</a></li>
+
 												</div>
-												<div id="webide" style="visibility:hidden; position:static;">
-													webide
+												<div id="webide" style="visibility:hidden; ">
+													<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1');">PPT1</a></li>
+													<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1'); hide('jcloud') ">PPT2</a></li>
+													<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1');">PPT3</a></li>
 												</div>
 										</div>
 										<!--<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>-->
 
 
-										<br><iframe src='https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21108&authkey=AGd9e5Asc2_Gjho&em=2&wdAr=1.7777777777777777' width='1050px' height='691px' frameborder='0'>포함된 <a target='_blank' href='https://office.com'>Microsoft Office</a> 프레젠테이션, 제공: <a target='_blank' href='https://office.com/webapps'>Office Online</a></iframe>
+										<br>
+										<iframe id="ppt1" style="visibility:hidden; " src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21108&authkey=AGd9e5Asc2_Gjho&em=2" width="1050" height="691" frameborder="0" scrolling="no"></iframe>
+										<iframe id="ppt2" style="visibility:hidden; position:relative; top: -701px;" src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21113&authkey=AD5ksY-FrKkP4fE&em=2" width="1050" height="691" frameborder="0" scrolling="no"></iframe>
+										<iframe id="ppt3" style="visibility:hidden; position:relative; top: -1402px;" src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21115&authkey=ABWcN22np8CSD7k&em=2" width="1050" height="691" frameborder="0" scrolling="no"></iframe>
+
+										<!-- <iframe id="ppt3" style="visibility:hidden;" src='https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21108&authkey=AGd9e5Asc2_Gjho&em=2&wdAr=1.7777777777777777' width='1050px' height='691px' frameborder='0'>포함된 <a target='_blank' href='https://office.com'>Microsoft Office</a> 프레젠테이션, 제공: <a target='_blank' href='https://office.com/webapps'>Office Online</a></iframe> -->
 									</center>
 										<header>
-											<h3>Dolore Amet Consequat</h3>
+											<h3 style=" position:relative;">Dolore Amet Consequat</h3>
 										</header>
 										<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum massa. Morbi eu faucibus massa. Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
 										<p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique. Sed id sem et massa ornare pellentesque. Maecenas pharetra porta accumsan. </p>
