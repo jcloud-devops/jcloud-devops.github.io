@@ -17,11 +17,19 @@
  var show = function(path) {
 		 var tool = document.getElementById(path);
 		 tool.style.visibility = '';
+
  }
  var hide = function(path) {
 		 var tool  = document.getElementById(path);
 		 tool.style.visibility = 'hidden';
  }
+
+ var underline = function(path) {
+		 var tool  = document.getElementById(path);
+		 tool.style.visibility = 'hidden';
+		 $('li[id=c1]').val('h1').css('color','green');
+ }
+
 </script>
 
 	</head>
@@ -32,11 +40,11 @@
 				<header id="header">
 					<h1 id="logo"><a href="index.html"><img src="images/logo_jbnu.png" width="15" height="15" alt="" />&nbsp;JCloud <span>by JDevOps</span></a></h1>
 					<nav id="nav">
-						<ul>
+						<ul style="text-transform:none">
 							<li class="current"><a href="index.html">Welcome</a></li>
 							<li class="current"><a href="feature.html">Feature</a></li>
 							<li class="current"><a href="user-guide.html">User guide</a></li>
-							<li class="current"><a href="contact.html">Contact</a></li>
+							<li class="current"><a href="contact.html">J-DevOps</a></li>
 
 							<!-- <li class="submenu">
 								<a href="#">Layouts</a>
@@ -77,33 +85,28 @@
 							<!-- Content -->
 								<div class="content">
 									<section>
-										<ul class="buttons vertical" style="text-align:center;">
-											<li style="display:inline;"><a style="text-transform:none;" onclick="show('jcloud'); hide('webide')" class="button">JCloud</a></li> &emsp;
-											<li style="display:inline;"><a style="text-transform:none;" onclick="show('webide'); hide('jcloud')" class="button">WebIDE</a></li>
+										<ul style="text-align:center;">
+											<div class="clickevent">
+											<li style="display:inline;">JCloud</a></li> &emsp;
+												 <li  style="display:inline;"><a id="j1" style="text-transform:none;" onclick="document.getElementById('j1').style.text = 'bold'; show('ppt1'); hide('ppt2'); hide('ppt3'); ">PPT1</a></li>
+												 <li id="j1" style="display:inline;"><a style="text-transform:none;" onclick="show('ppt2'); hide('ppt1'); hide('ppt3')">PPT2</a></li>
+												 <li id="j1" style="display:inline;"><a style="text-transform:none;" onclick="show('ppt3'); hide('ppt1'); hide('ppt2')">PPT3</a></li>&emsp;&emsp;
+
+											<li style="display:inline;">WebIDE</a></li>&emsp;
+												<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1');">PPT1</a></li>
+												<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1'); hide('jcloud') ">PPT2</a></li>
+												<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1');">PPT3</a></li>
+											</div>
+											<!-- <li style="display:inline;"><a style="text-transform:none;" onclick="show('jcloud'); hide('webide')" class="button">JCloud</a></li> &emsp;
+											<li style="display:inline;"><a style="text-transform:none;" onclick="show('webide'); hide('jcloud')" class="button">WebIDE</a></li> -->
 										</ul>
 										<center>
-											<div class="button-js">
-												<div id="jcloud" style="visibility:hidden;">
-
-													 <li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1'); hide('ppt2'); hide('ppt3')">PPT1</a></li>
-													 <li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt2'); hide('ppt1'); hide('ppt3')">PPT2</a></li>
-													 <li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt3'); hide('ppt1'); hide('ppt2')">PPT3</a></li>
-
-												</div>
-												<div id="webide" style="visibility:hidden; ">
-													<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1');">PPT1</a></li>
-													<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1'); hide('jcloud') ">PPT2</a></li>
-													<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1');">PPT3</a></li>
-												</div>
-										</div>
-										<!--<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>-->
-
-
 										<br>
-										<iframe id="ppt1" style="visibility:hidden; " src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21108&authkey=AGd9e5Asc2_Gjho&em=2" width="1050" height="691" frameborder="0" scrolling="no"></iframe>
-										<iframe id="ppt2" style="visibility:hidden; position:relative; top: -701px;" src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21113&authkey=AD5ksY-FrKkP4fE&em=2" width="1050" height="691" frameborder="0" scrolling="no"></iframe>
-										<iframe id="ppt3" style="visibility:hidden; position:relative; top: -1402px;" src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21115&authkey=ABWcN22np8CSD7k&em=2" width="1050" height="691" frameborder="0" scrolling="no"></iframe>
-
+										<div class='embed-container'>
+										<iframe id="ppt1"  src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21108&authkey=AGd9e5Asc2_Gjho&em=2" width="1050" height="691" frameborder="0" scrolling="no"></iframe>
+										<iframe id="ppt2" style="visibility:hidden; " src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21113&authkey=AD5ksY-FrKkP4fE&em=2" width="1050" height="691" frameborder="0" scrolling="no"></iframe>
+										<iframe id="ppt3" style="visibility:hidden; " src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21115&authkey=ABWcN22np8CSD7k&em=2" width="1050" height="691" frameborder="0" scrolling="no"></iframe>
+									</div>
 										<!-- <iframe id="ppt3" style="visibility:hidden;" src='https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21108&authkey=AGd9e5Asc2_Gjho&em=2&wdAr=1.7777777777777777' width='1050px' height='691px' frameborder='0'>포함된 <a target='_blank' href='https://office.com'>Microsoft Office</a> 프레젠테이션, 제공: <a target='_blank' href='https://office.com/webapps'>Office Online</a></iframe> -->
 									</center>
 										<header>
@@ -167,7 +170,7 @@
 								</div>
 							</div>
 						</section> -->
-
+<center>jcloud.devops@gmail.com</center>
 				</article>
 
 			<!-- Footer -->
