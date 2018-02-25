@@ -1565,10 +1565,11 @@
 
 	}
 /* add */
-a:hover.clickevent {
+.clickevent a:hover {
 	color: red;
 	background-color: transparent;
 	text-decoration: underline;
+	cursor: pointer;
 }
 
 a[selected] {
