@@ -85,6 +85,7 @@
 		width: 1400px;
 	}
 
+
 	@media screen and (max-width: 1680px) {
 
 		.container.\31 25\25 {
@@ -1563,7 +1564,16 @@
 		}
 
 	}
+/* add */
+a:hover.clickevent {
+	color: red;
+	background-color: transparent;
+	text-decoration: underline;
+}
 
+a[selected] {
+   text-decoration: underline;
+}
 /* Basic */
 
 	body {
