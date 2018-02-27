@@ -14,20 +14,48 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<script>       //show함수는 보여주게 하고 hide함수는 숨겨준다.
- var show = function(path) {
-		 var tool = document.getElementById(path);
-		 tool.style.visibility = '';
+ // var show = function(path) {
+	// 	 var tool = document.getElementById(path);
+	// 	 tool.style.visibility = '';
+ // }
+ // var hide = function(path) {
+	// 	 var tool  = document.getElementById(path);
+	// 	 tool.style.visibility = 'hidden';
+ // }
 
- }
- var hide = function(path) {
-		 var tool  = document.getElementById(path);
-		 tool.style.visibility = 'hidden';
+ /* 알고리즘 수정하기 */
+ var view1 = function() {
+		 document.getElementById('ppt1').style.visibility = '';
+		 document.getElementById('ppt2').style.visibility = 'hidden';
+		 document.getElementById('ppt3').style.visibility = 'hidden';
+
+		 document.getElementById('j1').style.color = 'red';
+		 document.getElementById('j2').style.color = '';
+		 document.getElementById('j3').style.color = '';
  }
 
- var underline = function() {
-		 document.getElementById().va
-		 $('li[id=c1]').val('h1').css('text-decoration','underline');
+ var view2 = function(path) {
+		document.getElementById('ppt1').style.visibility = 'hidden';
+		document.getElementById('ppt2').style.visibility = '';
+		document.getElementById('ppt3').style.visibility = 'hidden';
+
+		document.getElementById('j1').style.color = '';
+		document.getElementById('j2').style.color = 'red';
+		document.getElementById('j3').style.color = '';
  }
+
+ var view3 = function(path) {
+		document.getElementById('ppt1').style.visibility = 'hidden';
+		document.getElementById('ppt2').style.visibility = 'hidden';
+		document.getElementById('ppt3').style.visibility = '';
+
+		document.getElementById('j1').style.color = '';
+		document.getElementById('j2').style.color = '';
+		document.getElementById('j3').style.color = 'red';
+ }
+
+
+
 
 </script>
 
@@ -87,9 +115,9 @@
 										<ul style="text-align:center;">
 											<div class="clickevent">
 											<li style="display:inline;">JCloud</a></li> &emsp;
-												 <li  style="display:inline;"><a id="j1" style="text-transform:none;" onclick="show('ppt1'); hide('ppt2'); hide('ppt3'); ">PPT1</a></li>
-												 <li id="j1" style="display:inline;"><a style="text-transform:none;" onclick="show('ppt2'); hide('ppt1'); hide('ppt3')">PPT2</a></li>
-												 <li id="j1" style="display:inline;"><a style="text-transform:none;" onclick="show('ppt3'); hide('ppt1'); hide('ppt2')">PPT3</a></li>&emsp;&emsp;
+												 <li style="display:inline;"><a id="j1" style="text-transform:none;" onclick="view1();">PPT1</a></li>
+												 <li style="display:inline;"><a id="j2" style="text-transform:none;" onclick="view2()">PPT2</a></li>
+												 <li style="display:inline;"><a id="j3" style="text-transform:none;" onclick="view3()">PPT3</a></li>&emsp;&emsp;
 
 											<li style="display:inline;">WebIDE</a></li>&emsp;
 												<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1');">PPT1</a></li>
