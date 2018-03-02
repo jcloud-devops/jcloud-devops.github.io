@@ -1,0 +1,3 @@
+JCloud 를 기반으로 하여 Web IDE 서비스를 제공합니다. Eclipse Che를 기반으로 한 Codenvy Docker container 로 운영 중입니다. 학생들에게 개별 container로 구성된 workspace를 제공하여, 독립적인 개발환경을 웹 기반으로 제공하며 Local IDE 와도 연동 가능합니다
+
+2018년 하반기 목표: Queens 버전을 Kolla를 이용해 컨테이너 기반으로 운용하기
