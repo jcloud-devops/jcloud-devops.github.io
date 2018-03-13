@@ -28,32 +28,49 @@
 		 document.getElementById('ppt1').style.visibility = '';
 		 document.getElementById('ppt2').style.visibility = 'hidden';
 		 document.getElementById('ppt3').style.visibility = 'hidden';
+		 document.getElementById('ppt4').style.visibility = 'hidden';
 
 		 document.getElementById('j1').style.color = 'red';
 		 document.getElementById('j2').style.color = '';
 		 document.getElementById('j3').style.color = '';
+		 document.getElementById('j4').style.color = '';
  }
 
  var view2 = function(path) {
 		document.getElementById('ppt1').style.visibility = 'hidden';
 		document.getElementById('ppt2').style.visibility = '';
 		document.getElementById('ppt3').style.visibility = 'hidden';
+		document.getElementById('ppt4').style.visibility = 'hidden';
 
 		document.getElementById('j1').style.color = '';
 		document.getElementById('j2').style.color = 'red';
 		document.getElementById('j3').style.color = '';
+		document.getElementById('j4').style.color = '';
  }
 
  var view3 = function(path) {
 		document.getElementById('ppt1').style.visibility = 'hidden';
 		document.getElementById('ppt2').style.visibility = 'hidden';
 		document.getElementById('ppt3').style.visibility = '';
+		document.getElementById('ppt4').style.visibility = 'hidden';
 
 		document.getElementById('j1').style.color = '';
 		document.getElementById('j2').style.color = '';
 		document.getElementById('j3').style.color = 'red';
+		document.getElementById('j4').style.color = '';
  }
 
+ var view4 = function(path) {
+		document.getElementById('ppt1').style.visibility = 'hidden';
+		document.getElementById('ppt2').style.visibility = 'hidden';
+		document.getElementById('ppt3').style.visibility = 'hidden';
+		document.getElementById('ppt4').style.visibility = '';
+
+		document.getElementById('j1').style.color = '';
+		document.getElementById('j2').style.color = '';
+		document.getElementById('j3').style.color = '';
+		document.getElementById('j4').style.color = 'red';
+ }
 
 
 
@@ -115,9 +132,10 @@
 										<ul style="text-align:center;">
 											<div class="clickevent">
 											<li style="display:inline;">JCloud</a></li> &emsp;
-												 <li style="display:inline;"><a id="j1" style="text-transform:none;" onclick="view1();">PPT1</a></li>
-												 <li style="display:inline;"><a id="j2" style="text-transform:none;" onclick="view2()">PPT2</a></li>
-												 <li style="display:inline;"><a id="j3" style="text-transform:none;" onclick="view3()">PPT3</a></li>&emsp;&emsp;
+												 <li style="display:inline;"><a id="j1" style="text-transform:none;" onclick="view1();">인스턴스 생성 방법</a></li>&emsp;
+												 <li style="display:inline;"><a id="j2" style="text-transform:none;" onclick="view2()">SSH 접속(Putty)</a></li>
+												 <li style="display:inline;"><a id="j3" style="text-transform:none;" onclick="view3()">(Xshell)</a></li>
+												 <li style="display:inline;"><a id="j4" style="text-transform:none;" onclick="view4()">(Linux)</a></li>&emsp;&emsp;
 
 											<li style="display:inline;">WebIDE</a></li>&emsp;
 												<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1');">PPT1</a></li>
