@@ -19,11 +19,9 @@
     opacity: 0.75;
     filter: alpha(opacity=75); /* For IE8 and earlier */
 }
-.profile h3 {
+.profile h3, p {
 	font-weight: normal;
-	margin: 0 auto;
-}
-.profile p {
+	text-align: center;
 	margin: 0 auto;
 }
 .profile .hov_img:hover, .profile .hov_img:focus {
