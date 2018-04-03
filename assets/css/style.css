@@ -1,0 +1,32 @@
+/*
+	For Jcloud-DevOps Git Page
+	Free for personal and commercial use under the CCA 3.0 license
+*/
+.profile {
+	text-align: center;
+}
+.profile .hov_img {
+    display: block;
+	width: 100%;
+	max-width: 220px;
+    height: 220px;
+	border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto 1em auto;
+    transition: opacity .5s;
+    opacity: 0.75;
+    filter: alpha(opacity=75); /* For IE8 and earlier */
+}
+.profile h3 {
+	font-weight: normal;
+	margin: 0 auto;
+}
+.profile p {
+	margin: 0 auto;
+}
+.profile .hov_img:hover, .profile .hov_img:focus {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
+}
