@@ -11,6 +11,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			.ppt { visibility: 'hidden'; }
+			.slide-links { text-align: center; }
+			.group-title { float: left; font-weight: bold; }
+			.group-title:after { clear: both; }
+			.group-items li { display: inline-block; }
+			.group-items li>a { color: black; padding: 4px 8px; }
+			.group-items li>a.selected { color: white; background: red; }
+			.group-items li:not(:last-child):after { content: "\007C"; color: #ddd; }
+		</style>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<script>       //show함수는 보여주게 하고 hide함수는 숨겨준다.
@@ -23,56 +33,26 @@
 	// 	 tool.style.visibility = 'hidden';
  // }
 
- /* 알고리즘 수정하기 */
- var view1 = function() {
-		 document.getElementById('ppt1').style.visibility = '';
-		 document.getElementById('ppt2').style.visibility = 'hidden';
-		 document.getElementById('ppt3').style.visibility = 'hidden';
-		 document.getElementById('ppt4').style.visibility = 'hidden';
-
-		 document.getElementById('j1').style.color = 'red';
-		 document.getElementById('j2').style.color = '';
-		 document.getElementById('j3').style.color = '';
-		 document.getElementById('j4').style.color = '';
- }
-
- var view2 = function(path) {
-		document.getElementById('ppt1').style.visibility = 'hidden';
-		document.getElementById('ppt2').style.visibility = '';
-		document.getElementById('ppt3').style.visibility = 'hidden';
-		document.getElementById('ppt4').style.visibility = 'hidden';
-
-		document.getElementById('j1').style.color = '';
-		document.getElementById('j2').style.color = 'red';
-		document.getElementById('j3').style.color = '';
-		document.getElementById('j4').style.color = '';
- }
-
- var view3 = function(path) {
-		document.getElementById('ppt1').style.visibility = 'hidden';
-		document.getElementById('ppt2').style.visibility = 'hidden';
-		document.getElementById('ppt3').style.visibility = '';
-		document.getElementById('ppt4').style.visibility = 'hidden';
-
-		document.getElementById('j1').style.color = '';
-		document.getElementById('j2').style.color = '';
-		document.getElementById('j3').style.color = 'red';
-		document.getElementById('j4').style.color = '';
- }
-
- var view4 = function(path) {
-		document.getElementById('ppt1').style.visibility = 'hidden';
-		document.getElementById('ppt2').style.visibility = 'hidden';
-		document.getElementById('ppt3').style.visibility = 'hidden';
-		document.getElementById('ppt4').style.visibility = '';
-
-		document.getElementById('j1').style.color = '';
-		document.getElementById('j2').style.color = '';
-		document.getElementById('j3').style.color = '';
-		document.getElementById('j4').style.color = 'red';
- }
-
-
+document.addEventListener("DOMContentLoaded", function(){
+	var slides = document.getElementsByClassName('slide');
+	var ppts = document.getElementsByClassName('ppt');
+	function showSlide(pptId){
+		for (var i=0; i < ppts.length; i++) {
+			if (ppts[i].id == pptId) {
+				slides[i].classList.add('selected');
+				ppts[i].style.visibility = '';
+			} else {
+				slides[i].classList.remove('selected');
+				ppts[i].style.visibility = 'hidden';
+			}
+		}
+	}
+	for (var i=0; i < slides.length; i++) {
+		slides[i].addEventListener('click', function(evt){
+			showSlide(evt.target.dataset.target);
+		});
+	}
+});
 
 </script>
 
@@ -86,6 +66,7 @@
 					<nav id="nav">
 						<ul style="text-transform:none">
 							<li class="current"><a href="index.html">Welcome</a></li>
+							<li class="current"><a href="https://goo.gl/forms/EmmlUqCJ2l9MRuHy1" target="_blank">Request</a></li>
 							<li class="current"><a href="feature.html">Feature</a></li>
 							<li class="current"><a href="user-guide.html">User guide</a></li>
 							<li class="current"><a href="jdevops.html">J-DevOps</a></li>
@@ -127,43 +108,37 @@
 						<section class="wrapper style4 container">
 
 							<!-- Content -->
-								<div class="content">
-									<section>
-										<ul style="text-align:center;">
-											<div class="clickevent">
-											<li style="display:inline;">JCloud</a></li> &emsp;
-												 <li style="display:inline;"><a id="j1" style="text-transform:none;" onclick="view1();">인스턴스 생성 방법</a></li>&emsp;
-												 <li style="display:inline;"><a id="j2" style="text-transform:none;" onclick="view2()">SSH 접속(Putty)</a></li>
-												 <li style="display:inline;"><a id="j3" style="text-transform:none;" onclick="view3()">(Xshell)</a></li>
-												 <li style="display:inline;"><a id="j4" style="text-transform:none;" onclick="view4()">(Linux)</a></li>&emsp;&emsp;
-
-											<li style="display:inline;">WebIDE</a></li>&emsp;
-												<li style="display:inline;"><a style="text-transform:none;">준비 중</a></li>
-												<!-- <li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1'); hide('jcloud') ">PPT2</a></li>
-												<li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1');">PPT3</a></li> -->
-											</div>
-											<!-- <li style="display:inline;"><a style="text-transform:none;" onclick="show('jcloud'); hide('webide')" class="button">JCloud</a></li> &emsp;
-											<li style="display:inline;"><a style="text-transform:none;" onclick="show('webide'); hide('jcloud')" class="button">WebIDE</a></li> -->
+							<div class="content">
+								<section class="slide-links">
+									<div class="link-group">
+										<div class="group-title">JCloud</div>
+										<ul class="group-items">
+											<li><a class="slide" data-target="ppt1">인스턴스 생성 방법</a></li>
+											<li><a class="slide" data-target="ppt2">SSH 접속(Putty)</a></li>
+											<li><a class="slide" data-target="ppt3">SSH 접속(Xshell)</a></li>
+											<li><a class="slide" data-target="ppt4">SSH 접속(Terminal)</a></li>
 										</ul>
-										<center>
-										<br>
-										<div class='embed-container'>
-										<iframe id="ppt1"  src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21120&authkey=APrv8iwtzhuTCvA&em=2"></iframe>
-										<iframe id="ppt2" style="visibility:hidden; " src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21117&authkey=APhYdqP1oEbGLuE&em=2"></iframe>
-										<iframe id="ppt3" style="visibility:hidden; " src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21118&authkey=AG_lLb90f2B33OI&em=2"></iframe>
-										<iframe id="ppt4" style="visibility:hidden; " src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21119&authkey=AI7P0fIkne7wq0w&em=2"></iframe>
 									</div>
-										<!-- <iframe id="ppt3" style="visibility:hidden;" src='https://o365jbnu-my.sharepoint.com/personal/41983_staff_jbnu_ac_kr/_layouts/15/WopiFrame.aspx?sourcedoc={e5cfd350-dfea-4221-a788-156cab65edcd}&action=embedview&wdAr=1.3333333333333333' width='1026px' height='793px' frameborder='0'>포함된 <a target='_blank' href='https://office.com'>Microsoft Office</a> 프레젠테이션, 제공: <a target='_blank' href='https://office.com/webapps'>Office Online</a></iframe> -->
-									</center>
-										<!-- <header>
-											<h3 style=" position:relative;">Dolore Amet Consequat</h3>
-										</header>
-										<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum massa. Morbi eu faucibus massa. Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-										<p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique. Sed id sem et massa ornare pellentesque. Maecenas pharetra porta accumsan. </p>
-										<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus, non hendrerit ipsum arcu tristique est.</p>
-									</section> -->
-								</div>
 
+									<div class="link-group">
+										<div class="group-title">WebIDE</div>
+										<ul class="group-items">
+											<li>준비 중</li>
+											<!-- <li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1'); hide('jcloud') ">PPT2</a></li> -->
+											<!-- <li style="display:inline;"><a style="text-transform:none;" onclick="show('ppt1');">PPT3</a></li> -->
+											<!-- <li style="display:inline;"><a style="text-transform:none;" onclick="show('jcloud'); hide('webide')" class="button">JCloud</a></li> -->
+											<!-- <li style="display:inline;"><a style="text-transform:none;" onclick="show('webide'); hide('jcloud')" class="button">WebIDE</a></li> -->
+										</ul>
+									</div>
+								</div>
+								<div class="embed-container">
+									<iframe class="ppt" id="ppt1" src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21120&authkey=APrv8iwtzhuTCvA&em=2"></iframe>
+									<iframe class="ppt" id="ppt2" src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21117&authkey=APhYdqP1oEbGLuE&em=2"></iframe>
+									<iframe class="ppt" id="ppt3" src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21118&authkey=AG_lLb90f2B33OI&em=2"></iframe>
+									<iframe class="ppt" id="ppt4" src="https://onedrive.live.com/embed?cid=6535D6AA67969C35&resid=6535D6AA67969C35%21119&authkey=AI7P0fIkne7wq0w&em=2"></iframe>
+									<!-- <iframe id="ppt3" style="visibility:hidden;" src='https://o365jbnu-my.sharepoint.com/personal/41983_staff_jbnu_ac_kr/_layouts/15/WopiFrame.aspx?sourcedoc={e5cfd350-dfea-4221-a788-156cab65edcd}&action=embedview&wdAr=1.3333333333333333' width='1026px' height='793px' frameborder='0'>포함된 <a target='_blank' href='https://office.com'>Microsoft Office</a> 프레젠테이션, 제공: <a target='_blank' href='https://office.com/webapps'>Office Online</a></iframe> -->
+								</div>
+							</div>
 						</section>
 
 					<!-- Two -->
@@ -216,7 +191,7 @@
 								</div>
 							</div>
 						</section> -->
-						<center>Contact : jcloud@chonbuk.ac.kr </center>
+						<p align="center">Contact : jcloud@chonbuk.ac.kr</p>
 				</article>
 
 			<!-- Footer -->
