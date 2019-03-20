@@ -12,7 +12,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			.ppt { visibility: 'hidden'; }
+			.ppt { visibility: hidden; }
 			.slide-links { text-align: center; }
 			.group-title { float: left; font-weight: bold; }
 			.group-title:after { clear: both; }
@@ -23,39 +23,6 @@
 		</style>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<script>       //show함수는 보여주게 하고 hide함수는 숨겨준다.
- // var show = function(path) {
-	// 	 var tool = document.getElementById(path);
-	// 	 tool.style.visibility = '';
- // }
- // var hide = function(path) {
-	// 	 var tool  = document.getElementById(path);
-	// 	 tool.style.visibility = 'hidden';
- // }
-
-document.addEventListener("DOMContentLoaded", function(){
-	var slides = document.getElementsByClassName('slide');
-	var ppts = document.getElementsByClassName('ppt');
-	function showSlide(pptId){
-		for (var i=0; i < ppts.length; i++) {
-			if (ppts[i].id == pptId) {
-				slides[i].classList.add('selected');
-				ppts[i].style.visibility = '';
-			} else {
-				slides[i].classList.remove('selected');
-				ppts[i].style.visibility = 'hidden';
-			}
-		}
-	}
-	for (var i=0; i < slides.length; i++) {
-		slides[i].addEventListener('click', function(evt){
-			showSlide(evt.target.dataset.target);
-		});
-	}
-});
-
-</script>
-
 	</head>
 	<body class="no-sidebar">
 		<div id="page-wrapper">
@@ -215,15 +182,36 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollgress.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+	var slides = document.getElementsByClassName('slide');
+	var ppts = document.getElementsByClassName('ppt');
+	function showSlide(pptId){
+		for (var i=0; i < ppts.length; i++) {
+			if (ppts[i].id == pptId) {
+				slides[i].classList.add('selected');
+				ppts[i].style.visibility = 'visible';
+			} else {
+				slides[i].classList.remove('selected');
+				ppts[i].style.visibility = 'hidden';
+			}
+		}
+	}
+	for (var i=0; i < slides.length; i++) {
+		slides[i].addEventListener('click', function(evt){
+			showSlide(evt.target.dataset.target);
+		});
+	}
+});
+</script>
 	</body>
 </html>
