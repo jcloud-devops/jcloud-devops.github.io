@@ -99,13 +99,15 @@
 									</div>
 								</div>
 								<div class="embed-container">
-									<iframe class="ppt" id="ppt1" src="https://www.slideshare.net/slideshow/embed_code/key/uqhX3KUN4PpcGB" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/JoonasYoon/jcloudcreatinginstancestudent2019v2" title="Jcloud.creating.instance.student.2019.v2" target="_blank">Jcloud.creating.instance.student.2019.v2</a> </strong> from <strong><a href="https://www.slideshare.net/JoonasYoon" target="_blank">Joonas Yoon</a></strong> </div>
+									<p id="empty-msg" align="center">슬라이드를 선택해주세요.</p>
 
-									<iframe class="ppt" id="ppt2" src="https://www.slideshare.net/slideshow/embed_code/key/s7cMIFDTt36DRT" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/JoonasYoon/jcloudsshputty" title="Jcloud.ssh.putty" target="_blank">Jcloud.ssh.putty</a> </strong> from <strong><a href="https://www.slideshare.net/JoonasYoon" target="_blank">Joonas Yoon</a></strong> </div>
+									<iframe class="ppt" id="ppt1" src="https://www.slideshare.net/slideshow/embed_code/key/uqhX3KUN4PpcGB" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
-									<iframe class="ppt" id="ppt3" src="https://www.slideshare.net/slideshow/embed_code/key/fRNkKgNslDKLUq" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/JoonasYoon/jcloudsshxshell2" title="Jcloud.ssh.xshell2" target="_blank">Jcloud.ssh.xshell2</a> </strong> from <strong><a href="https://www.slideshare.net/JoonasYoon" target="_blank">Joonas Yoon</a></strong> </div>
+									<iframe class="ppt" id="ppt2" src="https://www.slideshare.net/slideshow/embed_code/key/s7cMIFDTt36DRT" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
-									<iframe class="ppt" id="ppt4" src="https://www.slideshare.net/slideshow/embed_code/key/l83OIjGvmC7fmH" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/JoonasYoon/jcloudsshlinuxcli" title="Jcloud.ssh.linux.cli" target="_blank">Jcloud.ssh.linux.cli</a> </strong> from <strong><a href="https://www.slideshare.net/JoonasYoon" target="_blank">Joonas Yoon</a></strong> </div>
+									<iframe class="ppt" id="ppt3" src="https://www.slideshare.net/slideshow/embed_code/key/fRNkKgNslDKLUq" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+									<iframe class="ppt" id="ppt4" src="https://www.slideshare.net/slideshow/embed_code/key/l83OIjGvmC7fmH" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 								</div>
 							</div>
 						</section>
@@ -196,6 +198,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	var slides = document.getElementsByClassName('slide');
 	var ppts = document.getElementsByClassName('ppt');
 	function showSlide(pptId){
+		document.getElementById('empty-msg').style.display = 'none';
 		for (var i=0; i < ppts.length; i++) {
 			if (ppts[i].id == pptId) {
 				slides[i].classList.add('selected');
