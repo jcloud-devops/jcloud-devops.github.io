@@ -1,0 +1,43 @@
+.ppt {
+    visibility: hidden; 
+    text-align: center; 
+    width:100%; 
+    margin: 0 auto;
+}
+.slide-links {
+    text-align: center;
+}
+
+.group-title { 
+    float: left; 
+    font-weight: bold; 
+}
+.group-title:after { 
+    clear: both; 
+}
+.group-items li { 
+    display: inline-block; 
+}
+.group-items li>a.selected { 
+    color: white; 
+    background: #ED5565;
+    border-color: #DA4453;
+}
+.group-items li:not(:last-child):after { 
+    content: "\007C"; 
+    color: #ddd; 
+}
+
+.btn {
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: .3em .5em;
+    transition: all 0.2s ease-in-out;
+}
+.btn:hover,.btn:focus,.btn:active {
+    color: #000;
+    border: 1px solid #666;
+    box-shadow: rgba(0,0,0,.25) 0px 3px 1px;
+}
