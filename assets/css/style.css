@@ -61,3 +61,40 @@ html, body {
     border-bottom: 1px solid #ccc;
     padding: 0.5em 0;
 }
+
+header.special h2 {
+    font-weight: 500;
+}
+
+#banner {
+    min-height: 700px;
+    height: 100vh;
+}
+
+#banner .point-down {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: .5em;
+    font-size: 1.5em;
+}
+
+#banner .point-down i.pointer {
+    animation-duration: 2s;
+    animation-name: wave;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wave {
+    from {
+        padding-bottom: 0;
+    }
+
+    50% {
+        padding-bottom: 1em;
+    }
+
+    to {
+        padding-bottom: 0;
+    }
+}
