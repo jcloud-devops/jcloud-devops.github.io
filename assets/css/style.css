@@ -2,6 +2,12 @@
 	For Jcloud-DevOps Git Page
 	Free for personal and commercial use under the CCA 3.0 license
 */
+@import url(../fonts/nanumbarungothic.css);
+
+html, body {
+    font-family: 'Nanum Barun Gothic', 'Malgun Gothic', sans-serif;
+}
+
 .profile {
 	text-align: center;
 }
