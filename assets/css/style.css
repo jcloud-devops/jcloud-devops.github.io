@@ -55,6 +55,16 @@ html, body {
     font-family: 'Lato', monospace, serif;
 }
 
+.reveal.alt #logo img.logo,
+.reveal #logo img.logo.alt {
+    display: none;
+}
+
+.reveal #logo img.logo,
+.reveal.alt #logo img.logo.alt {
+    display: inherit;
+}
+
 #banner .inner header h2 > img {
     max-width: 200px;
     border-top: 1px solid #ccc;
